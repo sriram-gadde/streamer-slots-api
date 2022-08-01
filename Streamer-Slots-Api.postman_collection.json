@@ -1,0 +1,335 @@
+{
+	"info": {
+		"_postman_id": "2d4eda0b-0aad-4e99-ab5f-e7ddf66eb7f2",
+		"name": "Streamer-Slots-Api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "16700075"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"first_name\": \"Sriram\",\r\n    \"password\": \"123456\",\r\n    \"phone\": 8283831411,\r\n    \"username\": \"sriram@gmail.com\",\r\n    \"tier\": \"t1\",\r\n    \"createdAt\": \"2022-07-26\",\r\n    \"updatedAt\": \"2022-07-26\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/api/users"
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"sriram@gmail.com\",\r\n    \"password\":\"@12345Yash\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/api/users/login"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Current User",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjo5fSwiaWF0IjoxNjU5MjczODM2LCJleHAiOjE2NTk2MzM4MzZ9.j9a4GDGF1xVO3zEx-bdmI-6Lvmxc3rg8WL0XB8utVDk",
+								"type": "text"
+							}
+						],
+						"url": "http://localhost:3000/api/users/me"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Current User",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjo5fSwiaWF0IjoxNjU5MjczODM2LCJleHAiOjE2NTk2MzM4MzZ9.j9a4GDGF1xVO3zEx-bdmI-6Lvmxc3rg8WL0XB8utVDk",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"first_name\": \"Yash\",\r\n\"password\": \"123456\",\r\n\"phone\":8283831411,\r\n\"username\":\"yashkr00129\",\r\n\"tier\": \"t1\",\r\n\"createdAt\": \"2022-07-26\",\r\n\"updatedAt\": \"2022-07-26\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/api/users/me"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Current User",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjo5fSwiaWF0IjoxNjU5MjczODM2LCJleHAiOjE2NTk2MzM4MzZ9.j9a4GDGF1xVO3zEx-bdmI-6Lvmxc3rg8WL0XB8utVDk",
+								"type": "text"
+							}
+						],
+						"url": "http://localhost:3000/api/users/me"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Slot",
+			"item": [
+				{
+					"name": "Create A New Slot",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjo5fSwiaWF0IjoxNjU5Mjc0MDYwLCJleHAiOjE2NTk2MzQwNjB9.8YBP7p9nNv8lJjttPH-w71-syZTfVjU7P0xMNW0KpEE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"slot_name\":\"Fracry\",\r\n    \"start_time\":\"4:00PM EST\",\r\n    \"end_time\":\"5:00 PM EST\",\r\n    \"game\":\"3\",\r\n    \"duration\":60,\r\n    \"langugage\":\"EN\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/api/slot"
+					},
+					"response": []
+				},
+				{
+					"name": "Update A Slot",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjo5fSwiaWF0IjoxNjU5Mjc0MDYwLCJleHAiOjE2NTk2MzQwNjB9.8YBP7p9nNv8lJjttPH-w71-syZTfVjU7P0xMNW0KpEE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"slot_name\":\"Resident Evil Rush Hour\",\r\n    \"game\":\"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/api/slot/5"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete A Slot",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjo5fSwiaWF0IjoxNjU5MDMyNTU0LCJleHAiOjE2NTkzOTI1NTR9.ytwRcMM5V4l7YrMaO1RET2aKfyI0NNEjQMg_T0FOTjU",
+								"type": "text"
+							}
+						],
+						"url": "http://localhost:3000/api/slot/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Slots",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:3000/api/slot"
+					},
+					"response": []
+				},
+				{
+					"name": "Participate in a Slot",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjo5fSwiaWF0IjoxNjU5Mjc0MDYwLCJleHAiOjE2NTk2MzQwNjB9.8YBP7p9nNv8lJjttPH-w71-syZTfVjU7P0xMNW0KpEE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": "http://localhost:3000/api/slot/6/streamer"
+					},
+					"response": []
+				},
+				{
+					"name": "See All Slots that user participates in",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjo5fSwiaWF0IjoxNjU5Mjc0MDYwLCJleHAiOjE2NTk2MzQwNjB9.8YBP7p9nNv8lJjttPH-w71-syZTfVjU7P0xMNW0KpEE",
+								"type": "text"
+							}
+						],
+						"url": "http://localhost:3000/api/slot/streamer"
+					},
+					"response": []
+				},
+				{
+					"name": "Cancel Slot participation",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjo5fSwiaWF0IjoxNjU5Mjc0MDYwLCJleHAiOjE2NTk2MzQwNjB9.8YBP7p9nNv8lJjttPH-w71-syZTfVjU7P0xMNW0KpEE",
+								"type": "text"
+							}
+						],
+						"url": "http://localhost:3000/api/slot/3/streamer"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Game",
+			"item": [
+				{
+					"name": "Create A Game",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjo5fSwiaWF0IjoxNjU5MDk1NTA1LCJleHAiOjE2NTk0NTU1MDV9.tvqVSap3cQOCokVPjWIcgqvq573he_tz-p5SDvh6gCI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Farcry 3\",\r\n    \"description\":\"Vaas is going to kill you if you dont play properly.\",\r\n    \"language\":\"EN\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/api/game"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Games",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:3000/api/game"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete A Game",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjo5fSwiaWF0IjoxNjU5MDk1NTA1LCJleHAiOjE2NTk0NTU1MDV9.tvqVSap3cQOCokVPjWIcgqvq573he_tz-p5SDvh6gCI",
+								"type": "text"
+							}
+						],
+						"url": "http://localhost:3000/api/game/4"
+					},
+					"response": []
+				},
+				{
+					"name": "Update A Game",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjo5fSwiaWF0IjoxNjU5MDk1NTA1LCJleHAiOjE2NTk0NTU1MDV9.tvqVSap3cQOCokVPjWIcgqvq573he_tz-p5SDvh6gCI",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Farcry 3\",\r\n    \"description\":\"Vaas is going to kill you if you dont play properly.Enjoy one of the best fps experience through this legendary game franchise.\",\r\n    \"language\":\"EN\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/api/game/5"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
